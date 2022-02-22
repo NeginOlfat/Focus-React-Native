@@ -5,9 +5,9 @@ import { RoundButton } from '../../components/RoundButton';
 export const Timing = ({ onChangeTime }) => {
   return (
     <View style={styles.timing}>
-      <RoundButton title='20' size={75} />
-      <RoundButton title='15' size={75} />
-      <RoundButton title='10' size={75} />
+      <RoundButton title='20' size={75}  onPress={() => onChangeTime(20)}/>
+      <RoundButton title='15' size={75}  onPress={() => onChangeTime(15)}/>
+      <RoundButton title='10' size={75}  onPress={() => onChangeTime(10)}/>
     </View>
   )
 } 
