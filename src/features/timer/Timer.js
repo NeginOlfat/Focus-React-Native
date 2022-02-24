@@ -8,13 +8,14 @@ import { spaceing } from '../../utils/sizes';
 import { RoundButton } from '../../components/RoundButton';
 import { Timing } from './Timing';
 
-export const  Timer = ({ focusSubject, setFocusSubject }) => {
+export const  Timer = ({ focusSubject, onEndTimer, clearFocusItem }) => {
     const [minutes, setMinutes] = useState(0.1);
     const [isStart, setIsStart] = useState(false);
     const [progress,setProgress] = useState(1);
 
     const onEnd = () => {
         setIsStart(false);
+        onEndTimer();
     }
     const changeTime = (min) => {
         setMinutes(min);
@@ -49,7 +50,7 @@ export const  Timer = ({ focusSubject, setFocusSubject }) => {
                 }
             </View>
             <View style={{ paddingLeft: spaceing.md }}>
-                <RoundButton size={50} title='-' onPress={() => setFocusSubject(null)} />
+                <RoundButton size={50} title='-' onPress={() => {clearFocusItem()}} />
             </View>
            
         </View>

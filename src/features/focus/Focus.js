@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { View, Text, StyleSheet,TextInput} from 'react-native';
+import { View, Text, StyleSheet,TextInput, SafeAreaView} from 'react-native';
 import { RoundButton } from '../../components/RoundButton';
 import { colors } from '../../utils/colors';
 import { fontSizes, spaceing } from '../../utils/sizes';
@@ -7,7 +7,7 @@ import { fontSizes, spaceing } from '../../utils/sizes';
 export const  Focus = ({ addFocus }) =>{
     const [subject, setSubject] = useState(null);
     return (
-        <View style={styles.focusContainer}>
+        <SafeAreaView style={styles.focusContainer}>
             <Text style={styles.focusText}>What would you like to focus on ?</Text>  
             <View style={styles.focusInnerContainer} >
                 <TextInput 
@@ -16,7 +16,7 @@ export const  Focus = ({ addFocus }) =>{
                 />
                 <RoundButton title='+' size={50} onPress={() => {addFocus(subject)}} />
             </View>          
-        </View>
+        </SafeAreaView>
     );
 }
 
